@@ -1,0 +1,25 @@
+region = "ap-south-1"                           #define region where you want you setup to be
+secret_key = ""                                 # Secret key for aws cli, Leave it blank if you have already Configured aws cli 
+access_key = ""                                 # Access key for aws cli, Leave it blank if you have already Configured aws cli
+vpc_cidr = "192.168.0.0/16"                     #provide cidr value for vpc give in /16 to have enough ips for later use
+rds_user = "admin"                              # User id to login in RDS
+rds_password = "MeF1rst-111422"                 #Password to login in RDS 
+db_instance_type = "db.t2.micro"                #instance type of your database
+db_size = 20                                    #Size of your RDS Server
+web_server_ami = "ami-09a7bbd08886aafdf"        #amazon linux ami id, to craete web servers
+web_server_instance_type = "t2.micro"           #instance type of your web servers
+web_key = "myvpc"                               # key name to login in web and app servers
+web_servers_asg_max_size = 3                    #Auto Scaling group maximum number of servers for web tier
+web_servers_asg_min_size = 1                    #Auto Scaling group maximum number of servers for web tier
+web_servers_asg_desired_capacity = 2            #Auto Scaling group maximum number of servers for web tier
+app_server_ami = "ami-09a7bbd08886aafdf"        #amazon linux ami id, to craete App servers
+app_server_instance_type = "t2.micro"           #instance type of your wAppservers
+app_servers_asg_max_size = 3                    #Auto Scaling group maximum number of servers for app tier
+app_servers_asg_min_size = 1                    #Auto Scaling group maximum number of servers for app tier
+app_servers_asg_desired_capacity = 2            #Auto Scaling group maximum number of servers for app tier
+app_keypair_path = "keys/ec2-user.pub"           #Key pair to login in app/web pair
+app_key_name = "ec2-user"                        #key pair name to login app/web pair
+compute = 3                                      #No of availability zone you want to have in your architecture, Check your region before giving input
+web_placement_strategy = "spread"                #Placement strategy for web tier spread/cluster/spread
+app_placement_strategy = "spread"                 #Placement strategy for app tier spread/cluster/spread
+
